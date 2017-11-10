@@ -2,7 +2,6 @@
 #include <iostream>
 #include <sstream>
 
-
 using namespace std;
 
 bool read_numbers(int & n, int * array)
@@ -19,6 +18,7 @@ bool read_numbers(int & n, int * array)
 			break;
 		}
 	}
+	
 	return success;
 }
 
@@ -34,20 +34,19 @@ int * swapp(int * array, int k) {
 int main() {
 	int n;
 	string str;
-
 	getline(cin, str);
 	istringstream stream(str);
 
 	if (stream >> n) {
 		int g = abs(n);
 		int * array = new int[g];
-		int k = 0;
-		if (read_numbers(n, array) && n > 0) {
-			if (!(cin >> k) || (k <= 0))
-			{
-				cout << "An error has occured while reading input data.\n";
-				return 0;
-			}
+		int k;
+		if (read_numbers(n, array) && n > 0 ) {
+			string str;
+			getline(cin, str);
+			istringstream stream(str);
+			if (stream >> k) {
+
 				int * array1 = new int[k];
 				for (int i = 0; i < k; i++) {
 					array1[i] = array[i];
@@ -74,7 +73,10 @@ int main() {
 				for (int i = 0; i < n; i++) {
 					cout << array[i] << " ";
 				}
-			
+			}
+			else {
+				cout << "An error has occured while reading input data.";
+			}
 		}
 		else {
 			cout << "An error has occured while reading input data.";
@@ -85,3 +87,6 @@ int main() {
 	cin.get();
 	return 0;
 }
+
+
+
