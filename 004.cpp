@@ -75,22 +75,30 @@ float ** getmtrx(float ** array, unsigned int rows, unsigned int columns) {
 	while (m1<(rows / 2) + 1) {
 		switch (r) {
 		case 0:
-			for (int i = m4; i<m3 + 1; i++) { array[m1][i] = h; h++; }
+			for (int i = m4; i<m3 + 1; i++) { 
+				array[m1][i] = h; h++; 
+			}
 			r++;
 			m1++;
 			break;
 		case 1:
-			for (int i = m1; i<m2 + 1; i++) { array[i][m3] = h; h++; }
+			for (int i = m1; i<m2 + 1; i++) { 
+				array[i][m3] = h; h++; 
+			}
 			r++;
 			m3--;
 			break;
 		case 2:
-			for (int i = m3; i>m4 - 1; i--) { array[m2][i] = h; h++; }
+			for (int i = m3; i>m4 - 1; i--) { 
+				array[m2][i] = h; h++; 
+			}
 			r++;
 			m2--;
 			break;
 		case 3:
-			for (int i = m2; i>m1 - 1; i--) { array[i][m4] = h; h++; }
+			for (int i = m2; i>m1 - 1; i--) { 
+				array[i][m4] = h; h++; 
+			}
 			r = 0;
 			m4++;
 			break;
