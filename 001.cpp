@@ -45,7 +45,7 @@ int main() {
 				cout << array[i] << " ";
 			}
 			
-			delete[]  array;
+			delete[] array;
 		}
 		else {
 			cout << "An error has occured while reading input data.";
