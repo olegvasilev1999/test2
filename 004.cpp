@@ -72,7 +72,7 @@ float ** getmtrx(float ** array, unsigned int rows, unsigned int columns) {
 
 	int r = 0, h = 1, m1 = 0, m3 = columns - 1, m4 = 0, m2 = rows - 1;
 	int col = rows*columns;
-	while (h<col) {
+	while (h<=col) {
 		switch (r) {
 		case 0:
 			for (int i = m4; i<m3 + 1; i++) {
