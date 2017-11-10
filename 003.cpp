@@ -169,10 +169,6 @@ int main()
 
 			matrix = mastomtrx(array, matrix, rows, columns);
 
-			delete[] array;
-			delete[] array1;
-			delete[] array2;
-
 			output(cout, matrix, rows, columns);
 
 			destroy(matrix, rows);
