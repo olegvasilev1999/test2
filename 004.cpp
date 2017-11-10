@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <sstream>
-
+ 
 using namespace std;
 
 auto input(std::istream & stream,
