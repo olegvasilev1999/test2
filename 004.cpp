@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <sstream>
- 
+
 using namespace std;
 
 auto input(std::istream & stream,
@@ -25,11 +25,11 @@ auto input(std::istream & stream,
 			for (unsigned int i = 0; i < rows && success; i++) {
 				elements[i] = new float[columns];
 			}
-				success &= sstream.eof();
-			}
-			else {
-				success = false;
-			}
+			success &= sstream.eof();
+		}
+		else {
+			success = false;
+		}
 	}
 
 	if (success) {
@@ -71,33 +71,33 @@ auto output(std::ostream & stream,
 float ** getmtrx(float ** array, unsigned int rows, unsigned int columns) {
 
 	int r = 0, h = 1, m1 = 0, m3 = columns - 1, m4 = 0, m2 = rows - 1;
-
-	while (m1<(rows / 2) + 1) {
+	int col = rows*columns;
+	while (h<col) {
 		switch (r) {
 		case 0:
-			for (int i = m4; i<m3 + 1; i++) { 
-				array[m1][i] = h; h++; 
+			for (int i = m4; i<m3 + 1; i++) {
+				array[m1][i] = h; h++;
 			}
 			r++;
 			m1++;
 			break;
 		case 1:
-			for (int i = m1; i<m2 + 1; i++) { 
-				array[i][m3] = h; h++; 
+			for (int i = m1; i<m2 + 1; i++) {
+				array[i][m3] = h; h++;
 			}
 			r++;
 			m3--;
 			break;
 		case 2:
-			for (int i = m3; i>m4 - 1; i--) { 
-				array[m2][i] = h; h++; 
+			for (int i = m3; i>m4 - 1; i--) {
+				array[m2][i] = h; h++;
 			}
 			r++;
 			m2--;
 			break;
 		case 3:
-			for (int i = m2; i>m1 - 1; i--) { 
-				array[i][m4] = h; h++; 
+			for (int i = m2; i>m1 - 1; i--) {
+				array[i][m4] = h; h++;
 			}
 			r = 0;
 			m4++;
@@ -108,14 +108,11 @@ float ** getmtrx(float ** array, unsigned int rows, unsigned int columns) {
 	return array;
 }
 
-
-
-
 int main()
 {
 	float ** matrix;
 	unsigned int rows, columns;
-	
+
 
 	if (input(cin, matrix, rows, columns)) {
 		matrix = getmtrx(matrix, rows, columns);
