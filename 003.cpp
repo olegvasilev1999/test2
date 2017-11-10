@@ -116,7 +116,6 @@ float ** mastomtrx(float * array, float ** result, unsigned int rows, unsigned i
 	for (int i = rows - 2, j = 2 * columns + rows - 2; i > 0; i--, j++) {
 		 result[i][0] = array[j];
 	}
-
 	return result;
 }
 
